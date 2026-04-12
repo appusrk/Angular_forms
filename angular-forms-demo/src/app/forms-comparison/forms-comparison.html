@@ -1,0 +1,101 @@
+<div class="container">
+  <header class="header">
+    <h1>Angular Forms: Template-Driven vs Reactive</h1>
+    <button (click)="toggleComparison()" class="toggle-btn">
+      {{ showComparison ? 'Hide' : 'Show' }} Comparison
+    </button>
+  </header>
+
+  <div *ngIf="showComparison" class="comparison-guide">
+    <div class="comparison-grid">
+      <div class="comparison-section">
+        <h3>Template-Driven Forms</h3>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>✅ When to Use:</h4>
+            <ul>
+              <li>Simple forms with basic validation</li>
+              <li>Rapid prototyping</li>
+              <li>Forms that mirror the data model closely</li>
+              <li>When you prefer declarative approach in templates</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>❌ Limitations:</h4>
+            <ul>
+              <li>Limited unit testing capabilities</li>
+              <li>Complex validation is harder</li>
+              <li>Less control over form state</li>
+              <li>Harder to create dynamic forms</li>
+            </ul>
+          </div>
+        </div>
+        <div class="features">
+          <h4>Key Features:</h4>
+          <ul>
+            <li>Uses ngModel for two-way binding</li>
+            <li>Validation defined in template</li>
+            <li>Automatic form control creation</li>
+            <li>FormsModule required</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="comparison-section">
+        <h3>Reactive Forms</h3>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>✅ When to Use:</h4>
+            <ul>
+              <li>Complex forms with custom validation</li>
+              <li>Dynamic forms that change at runtime</li>
+              <li>When you need extensive unit testing</li>
+              <li>Cross-field validation requirements</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>❌ Limitations:</h4>
+            <ul>
+              <li>More verbose setup</li>
+              <li>Steeper learning curve</li>
+              <li>More code for simple forms</li>
+              <li>Requires understanding of FormBuilder</li>
+            </ul>
+          </div>
+        </div>
+        <div class="features">
+          <h4>Key Features:</h4>
+          <ul>
+            <li>Explicit form control creation</li>
+            <li>Validation defined in component</li>
+            <li>Immutable data model</li>
+            <li>ReactiveFormsModule required</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-practices">
+      <h3>Best Practices Summary</h3>
+      <div class="practice-grid">
+        <div class="practice-item">
+          <h4>Choose Template-Driven for:</h4>
+          <p>Simple registration forms, contact forms, basic user input</p>
+        </div>
+        <div class="practice-item">
+          <h4>Choose Reactive for:</h4>
+          <p>Multi-step wizards, complex business forms, forms with conditional fields</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="forms-container">
+    <div class="form-wrapper">
+      <app-template-form></app-template-form>
+    </div>
+    <div class="form-wrapper">
+      <app-reactive-form></app-reactive-form>
+    </div>
+  </div>
+</div>
