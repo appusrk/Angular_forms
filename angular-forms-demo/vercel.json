@@ -1,6 +1,6 @@
 {
   "buildCommand": "ng build --configuration production",
-  "outputDirectory": "dist/angular-forms-demo/browser",
+  "outputDirectory": "dist/browser",
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]
